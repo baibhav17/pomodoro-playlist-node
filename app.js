@@ -27,7 +27,8 @@ const defaultUsers = [
       const {name,userID, password} = req.body;
       const newUser = {index: defaultUsers.length + 1, name, userID, password};
       defaultUsers.push(newUser);
-      res.status(200).json(newUser);
+      const newUserResponse = {index:newUser.index, name:newUser.name, userID:newUser.userID}
+      res.status(200).json(newUserResponse);
   })
 
   // Get the list of users.
